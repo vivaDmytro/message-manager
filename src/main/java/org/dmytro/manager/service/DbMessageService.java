@@ -13,10 +13,10 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.StreamSupport;
 
+import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.toList;
 
 @Service("db")
@@ -43,7 +43,7 @@ public class DbMessageService implements MessageService {
         }
         return StreamSupport.stream(messages.spliterator(), false)
                 .map(m -> new Message(m.getId(), m.getText(), m.getUser().getName()))
-                .sorted(Comparator.comparing(Message::getUser))
+                .sorted(comparing(Message::getUser))
                 .collect(toList());
     }
 

@@ -25,7 +25,7 @@ public class MessageController {
     private MessageService messageService;
 
     @Autowired
-    public MessageController(@Qualifier("db") MessageService messageService) {
+    public MessageController(@Qualifier("embedded") MessageService messageService) {
         this.messageService = messageService;
     }
 

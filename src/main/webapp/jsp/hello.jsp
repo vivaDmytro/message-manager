@@ -36,6 +36,6 @@
         <p>Message:<p>
         <input id="utext" type="text"/>
     </div>
-    <button id = "opener">Open Dialog</button>
+    <button id = "opener">Add item</button>
 </body>
 </html>
