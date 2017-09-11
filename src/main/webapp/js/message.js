@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $.get("messages", function(data) {
+    $.get("/messages/", function(data) {
         $.each(data, function( key, value ) {
             var newRow = "<tr id='" + value.id + "'>" +
                 "<td>" + value.user + "</td>" +

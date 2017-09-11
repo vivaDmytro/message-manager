@@ -11,7 +11,6 @@
     <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
 
     <script type="text/javascript" language="JavaScript" src="js/message.js"></script>
-    <script type="text/javascript" language="JavaScript" src="js/main.js"></script>
     <script type="text/javascript" language="JavaScript" src="js/deleteItem.js"></script>
     <script type="text/javascript" language="JavaScript" src="js/editItem.js"></script>
     <script type="text/javascript" language="JavaScript" src="js/addItem.js"></script>
@@ -33,9 +32,9 @@
     </div>
     <div id="dialog" title="Add new item">
         <p>User:<p>
-        <input id="uname", type="text"/>
+        <input id="uname" type="text"/>
         <p>Message:<p>
-        <input id="utext", type="text"/>
+        <input id="utext" type="text"/>
     </div>
     <button id = "opener">Open Dialog</button>
 </body>

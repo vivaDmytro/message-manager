@@ -34,12 +34,12 @@ function addItem(user, text) {
     data["user"] = user;
 
     $.ajax({
-        url: "message",
+        url: "/messages/",
         contentType: "application/json",
         type: "POST",
         data: JSON.stringify(data),
-        success: function() {
-            var newRow = "<tr id='" + 10 + "'>" +
+        success: function(response) {
+            var newRow = "<tr id='" + response.id + "'>" +
                 "<td>" + user + "</td>" +
                 "<td>" + text + "</td>" +
                 "<td><button class='edit'>Edit</button><button class='delete'>Delete</button></td>" +

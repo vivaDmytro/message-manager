@@ -15,12 +15,12 @@ $(document).on("click", ".edit", function() {
 
         var data = {};
         data["id"] = parseInt(rowId);
-        data["text"] = tds[0].textContent;
-        data["user"] = tds[1].textContent;
+        data["user"] = tds[0].textContent;
+        data["text"] = tds[1].textContent;
 
         $.ajax({
             type: "PUT",
-            url: "/message",
+            url: "/messages/",
             contentType: "application/json",
             data: JSON.stringify(data)
         });
