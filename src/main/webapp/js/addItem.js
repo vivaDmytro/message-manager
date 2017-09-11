@@ -48,7 +48,8 @@ function addItem(user, text) {
             $(newRow).appendTo($("#content #messages"));
         },
         error: function() {
-            alert("Error!");
+            $(".ui-state-error p").html("<strong>Alert:</strong> Incorrect data.");
+            $(".ui-state-error").css('visibility', 'visible')
         }
     });
 }

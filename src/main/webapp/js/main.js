@@ -10,3 +10,7 @@ $(document).ready(function() {
         });
     });
 });
+
+$(document).on("click", ".ui-state-error", function() {
+    $(".ui-state-error").css('visibility', 'hidden')
+});

@@ -60,16 +60,16 @@ public class MessageController {
     }
 
     @ExceptionHandler({MessageManagerException.class, ConstraintViolationException.class})
-    public ResponseEntity<Object> businessError(Exception e) {
+    public ResponseEntity<Error> businessError(Exception e) {
         logger.error("Business logic error {}", e.getMessage());
         return new ResponseEntity<>(
-                e.getMessage(), new HttpHeaders(), HttpStatus.BAD_REQUEST);
+                new Error("Incorrect input"), new HttpHeaders(), HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<Object> handleError(HttpServletRequest req, Exception ex) {
+    public ResponseEntity<Error> handleError(HttpServletRequest req, Exception ex) {
         logger.error("Request: {} raised {}", req.getRequestURL(), ex);
         return new ResponseEntity<>(
-                "Internal server error", new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR);
+                new Error("Internal server error"), new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }

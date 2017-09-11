@@ -22,7 +22,11 @@ $(document).on("click", ".edit", function() {
             type: "PUT",
             url: "/messages/",
             contentType: "application/json",
-            data: JSON.stringify(data)
+            data: JSON.stringify(data),
+            error: function() {
+            $(".ui-state-error p").html("<strong>Alert:</strong> Incorrect data.");
+            $(".ui-state-error").css('visibility', 'visible')
+        }
         });
     }
 });

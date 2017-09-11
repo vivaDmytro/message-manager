@@ -10,6 +10,6 @@ public class PageController {
     @RequestMapping("/")
     public String hello(Model model) {
 
-        return "hello";
+        return "index";
     }
 }
